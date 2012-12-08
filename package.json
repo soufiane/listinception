@@ -6,15 +6,8 @@
     "start": "node lib/app-server/app"
   },
   "dependencies": {
-    "express": "*",
+    "express": "3.0.4",
     "jade": "*",
-    "stylus": "*",
-    "nib": "*"
-  },
-  "devDependencies": {
-    "supertest": "*",
-    "chai": "*",
-    "mocha": "*",
-    "sinon": "*",
+    "stylus": "*"
   }
 }
