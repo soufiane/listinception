@@ -4,7 +4,14 @@
 
 ## Components
  
- Build using independant components, every copmponent does only 1 thing and expose an api.
+  Build using independant components, every copmponent does only 1 thing and expose an api.
+  This we can have a lot fo flexibility and we will be able to change things without affecting other components.
+
+  ######Example:
+    - A component can use coffeescript or even another programming language and it doesn't matter, because it exposes the same rest api
+    - We can use different build systems or different test framework for each component
+    - etc ...
+
 
 ## File layouts
   
