@@ -9,6 +9,7 @@
     "express": "3.0.4",
     "jade": "*",
     "stylus": "*",
-    "nano": "3.3.4"
+    "nano": "3.3.4",
+    "validator": "*"
   }
 }
