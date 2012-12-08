@@ -31,3 +31,4 @@
 
   - camelCase javascript names
   - Use a hyphen to separate components, e.x list-rest, embed-rest, upload-rest
+  - Namespace every private components ex: listinception.list-api
