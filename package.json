@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
     "nano": "3.3.4",
-    "validator": "*"
+    "validator": "*",
+    "bcrypt": "0.7.3"
   }
 }
