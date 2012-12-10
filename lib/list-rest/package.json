@@ -1,5 +1,5 @@
 {
-  "name": "listinception.app-server",
+  "name": "listinception.list-rest",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
