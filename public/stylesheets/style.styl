@@ -1,0 +1,153 @@
+
+.clearfix
+  clearfix()
+
+// Rest default styles
+reset-html5()
+global-reset()
+// Global colors
+
+// MAIN_COLOR
+MAIN_COLOR=#FCAD19
+GREY=#4A4A4A
+LIGHT_GREY=#E3E3E3
+
+// Size
+baseFontSize=14px
+
+*
+  box-sizing border-box
+
+body
+  font 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  color GREY
+  background url('/images/bedge_grunge.png') top left repeat
+
+a
+  color MAIN_COLOR
+  text-decoration none
+
+// Typography
+
+h1
+  font-size baseFontSize * 2.75
+h2
+  font-size baseFontSize * 2.25
+h3
+  font-size baseFontSize * 1.75
+h4
+  font-size baseFontSize * 1.25
+h5
+  font-size baseFontSize
+h6
+  font-size baseFontSize * 0.85
+  
+// Inputs
+input[type=text], input[type=password], textarea
+  background white
+  border 1px solid LIGHT_GREY
+  padding 5px 10px
+  outline none
+
+input[type=text]:hover, input[type=password]:hover, textarea:hover
+  border 1px solid GREY
+  box-shadow(inset 0 1px 2px rgba(black, .2))
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus
+  border 1px solid GREY
+  box-shadow(0 0 2px MAIN_COLOR)
+
+
+// Header
+header:hover
+  background white
+  box-shadow(1px 1px 2px, rgba(black, .2))
+  
+header
+  box-shadow(1px 1px 1px, rgba(black, .1))
+  background rgba(white, .9)
+
+  >div
+    height 48px
+    display inline-block
+    border-right 1px solid LIGHT_GREY
+    transition(box-shadow .3s ease-out)
+  >div:hover
+    box-shadow(inset 0 0 4px rgba(black, .2))
+
+  #logo
+    float left
+    a
+      padding 19px 20px
+      color GREY
+      float left
+      text-transform uppercase
+      font-size 20px
+      font-family 'Pt Sans',"Lucida Grande", Helvetica, Arial, sans-serif
+      display inline-block
+      line-height 10px
+
+  #search
+    width 300px
+    input, input:hover, input:focus
+      border none
+      box-shadow none
+      background transparent
+    input
+      width 100%
+      height 100%
+
+
+  #current-user-links
+    float right
+    border-left 1px solid LIGHT_GREY
+    img
+      width 50px
+      height 48px
+
+
+.breadcrumb
+  li
+    display inline-block
+
+// Header
+#editor:hover
+  background white
+  box-shadow(1px 1px 2px, rgba(black, .2))
+  
+#editor
+  box-shadow(0px 1px 5px, rgba(black, .2))
+  background rgba(white, .9)
+  width 960px
+  height 1000px
+  margin 20px auto
+  .breadcrumb
+    padding 16px 20px
+    border-bottom 1px solid LIGHT_GREY
+   .arrow
+     font-size 10px
+    li
+      padding 0 7px
+      font-size 15px
+      a
+        color #757575
+  #playground
+    padding 20px
+    ul
+      padding-left 22px
+    li
+      font-size 15px
+      padding 7px 0
+      .circle
+        background rgba(GREY, .9)
+        border-radius(50%)
+        width 8px
+        height 8px
+        display inline-block
+        margin-right 10px
+
+    .node .circle
+      background rgba(GREY, .6)
+      width 7px
+      height 7px
+
