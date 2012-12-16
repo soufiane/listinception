@@ -12,6 +12,7 @@
     "mongodb": "*",
     "validator": "*",
     "bcrypt": "0.7.3",
+    "nib": "*",
     "connect-redis": "*"
   }
 }
