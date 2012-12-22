@@ -1,0 +1,12 @@
+{
+  "name": "backbone",
+  "description": "Backbone",
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}

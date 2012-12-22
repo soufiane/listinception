@@ -1,0 +1,13 @@
+{
+  "name": "list",
+  "description": "list model",
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*"
+  },
+  "local": ["backbone"],
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}

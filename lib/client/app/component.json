@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "description": "Listinception",
+  "dependencies": {
+  },
+  "development": {},
+  "local": ["list"],
+  "paths": ["../"],
+  "scripts": [
+    "index.js"
+  ]
+}

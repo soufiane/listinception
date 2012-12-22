@@ -1,0 +1,13 @@
+{
+  "name": "lists",
+  "description": "lists backbone collection",
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*"
+  },
+  "development": {},
+  "local": ["backbone", "list"],
+  "scripts": [
+    "index.js"
+  ]
+}
