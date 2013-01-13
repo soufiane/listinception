@@ -1,0 +1,9 @@
+{
+  "name": "jade-runtime",
+  "description": "jade-runtime",
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
