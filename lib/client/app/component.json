@@ -4,7 +4,14 @@
   "dependencies": {
   },
   "development": {},
-  "local": ["list"],
+  "local": [
+    "backbone",
+    "emitter",
+    "router",
+    "landing",
+    "editor",
+    "error"
+    ],
   "paths": ["../"],
   "scripts": [
     "index.js"
