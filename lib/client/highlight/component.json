@@ -1,0 +1,12 @@
+{
+  "name": "highlight",
+  "description": "Syntax highlighting for Markdown",
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "highlight.css"
+  ]
+}
