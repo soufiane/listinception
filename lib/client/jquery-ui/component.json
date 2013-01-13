@@ -1,0 +1,11 @@
+{
+  "name": "jquery-ui",
+  "description": "jquery-ui",
+  "dependencies": {
+    "component/jquery": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
