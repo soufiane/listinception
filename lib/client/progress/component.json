@@ -1,0 +1,16 @@
+{
+  "name": "progress",
+  "description": "Progressbar",
+  "dependencies": {
+    "component/jquery": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "local": ["emitter"],
+  "styles": [
+    "progress.css"
+  ]
+}
