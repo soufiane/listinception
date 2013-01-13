@@ -1,0 +1,12 @@
+{
+  "name": "emitter",
+  "description": "Global emitter based on backbone events",
+  "dependencies": {
+    "component/underscore": "*"
+  },
+  "development": {},
+  "local": ["backbone"],
+  "scripts": [
+    "index.js"
+  ]
+}
