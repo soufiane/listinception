@@ -15,13 +15,49 @@ LIGHT_GREY=#E3E3E3
 // Size
 baseFontSize=14px
 
+/*
+
+@font-face
+  font-family: 'Entypo';
+  src: url('/fonts/entypo/entypo.eot'), // IE9 Compat Modes
+       url('/fonts/entypo/entypo.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+       url('/fonts/entypo/entypo.woff') format('woff'), // Modern Browsers
+       url('/fonts/entypo/entypo.ttf')  format('truetype'), // Safari, Android, iOS
+       url('/fonts/entypo/entypo.svg#Entypo') format('svg'); // Legacy iOS
+*/
+
+@font-face
+  font-family: 'Entypo';
+  src: url('/fonts/entypo/entypo.eot'), url('/fonts/entypo/entypo.eot?#iefix') format('embedded-opentype'), url('/fonts/entypo/entypo.woff') format('woff'), url('/fonts/entypo/entypo.ttf')  format('truetype'), url('/fonts/entypo/entypo.svg#Entypo') format('svg');
+
+[data-icon]:before
+  font-family: Entypo; /* BYO icon font, mapped smartly */
+  content: attr(data-icon);
+  speak: none; /* Not to be trusted, but hey. */
+
+#progress
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 10px
+  z-index 20
+  background LIGHT_GREY
+  display none
+  .elapsed-time
+    width 0
+    display block
+    background red
+    height 10px
+    transition(width .5s ease-in-out)
+
 *
   box-sizing border-box
 
 body
   font 14px "Lucida Grande", Helvetica, Arial, sans-serif
   color GREY
-  background url('/images/bedge_grunge.png') top left repeat
+  //background url('/images/bedge_grunge.png') top left repeat
 
 a
   color MAIN_COLOR
@@ -41,7 +77,9 @@ h5
   font-size baseFontSize
 h6
   font-size baseFontSize * 0.85
-  
+
+strong
+  font-weight bold
 // Inputs
 input[type=text], input[type=password], textarea
   background white
@@ -57,6 +95,22 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus
   border 1px solid GREY
   box-shadow(0 0 2px MAIN_COLOR)
 
+.hidden
+  display none
+
+.button
+  background MAIN_COLOR
+  color white
+  border none
+  font-size 15px
+  cursor pointer
+
+.button:hover
+  box-shadow(0 0 2px, rgba(black, .2))
+
+.button:focus
+  box-shadow(inset 0 0 2px, rgba(black, .6))
+
 
 // Header
 header:hover
@@ -66,17 +120,20 @@ header:hover
 header
   box-shadow(1px 1px 1px, rgba(black, .1))
   background rgba(white, .9)
-
+  transition(box-shadow .3s ease-out)
+  width 100%
   >div
     height 48px
     display inline-block
+    float left
+
+  .shadow
     border-right 1px solid LIGHT_GREY
     transition(box-shadow .3s ease-out)
-  >div:hover
+  .shadow:hover
     box-shadow(inset 0 0 4px rgba(black, .2))
 
   #logo
-    float left
     a
       padding 19px 20px
       color GREY
@@ -84,8 +141,45 @@ header
       text-transform uppercase
       font-size 20px
       font-family 'Pt Sans',"Lucida Grande", Helvetica, Arial, sans-serif
+      //font-family 'Source Sans Pro', "Lucida Grande", Helvetica, Arial, sans-serif
+      font-weight 600
       display inline-block
       line-height 10px
+  
+  #slogan
+    padding 15px 
+    font-size 12px
+    color GREY
+
+  #action-buttons:hover
+    box-shadow(none)
+
+  #action-buttons
+    float right
+    ul
+      li:hover
+        box-shadow(inset 0 0 4px rgba(black, .2))
+
+      li
+        display inline-block
+        border-left 1px solid LIGHT_GREY
+        padding 16px 20px
+        transition(box-shadow .3s ease-out)
+        a
+          color GREY
+          font-weight bold
+          font-size 12px
+          text-transform uppercase
+
+  #view-changer
+    li
+      display inline-block
+      border-right 1px solid LIGHT_GREY
+      padding 0 15px 2px 15px
+      cursor pointer
+    span
+      font-size 40px
+      display block
 
   #search
     width 300px
@@ -110,17 +204,11 @@ header
   li
     display inline-block
 
+
+
 // Header
-#editor:hover
-  background white
-  box-shadow(1px 1px 2px, rgba(black, .2))
-  
+
 #editor
-  box-shadow(0px 1px 5px, rgba(black, .2))
-  background rgba(white, .9)
-  width 960px
-  height 1000px
-  margin 20px auto
   .breadcrumb
     padding 16px 20px
     border-bottom 1px solid LIGHT_GREY
@@ -131,23 +219,465 @@ header
       font-size 15px
       a
         color #757575
+
   #playground
     padding 20px
-    ul
+    ul.children
       padding-left 22px
+    #new-list
+      display none
+      width 100%
+      padding 14px
+      border none
+      border-left 3px solid LIGHT_GREY
+      background rgba(white, .1)
+
+    #new-list:focus, #new-list:hover
+      box-shadow(none)
+      border-left 3px solid darken(LIGHT_GREY, 8)
+
+  
+
+    li:hover > .toggle
+      visibility visible
+      cursor pointer
+
+    li:hover > .tooltip
+      opacity 1
+
+    .hover:hover 
+      > .action-tooltip
+        display block
+      .drag
+        display block
+        position absolute
+        top 0
+        right 10px
+        cursor move
+        font-size 30px
+
+    .editing:hover 
+      > .editing-tooltip
+        display block
+      > .action-tooltip
+        display none
+
+    .drop-placeholder
+      background rgba(GREY, .5)
+      padding 0
+      height 3px
+      display inline-block
+
+
+    .tooltip:after
+      top 100%
+      border solid transparent
+      content " "
+      height 0
+      width 0
+      position absolute
+      pointer-events none
+
+    .tooltip:after
+      border-color transparent
+      border-top-color black
+      border-width 6px
+      left 14px
+      margin-left -6px
+
+   .tooltip
+      opacity 0
+      position absolute
+      top -23px
+      left 30px
+      background rgba(black, .9)
+      display none
+      color LIGHT_GREY
+      box-shadow(0px 1px 3px rgba(black, .3))
+      border-bottom 2px solid black
+
+      .tooltip-title
+        padding 8px 15px
+        font-size 11px
+        font-weight bold
+        text-transform uppercase
+        border-bottom 1px solid rgba(white, .2)
+
+      ul.buttons
+        padding 0
+        margin 0
+
+        li:hover
+          background white
+          color GREY
+
+        li
+          cursor pointer
+          display inline-block
+          padding 6px 11px 5px 11px
+          border-right 1px solid rgba(white, .2)
+          transition(background .3s ease-out)
+          position relative
+          color LIGHT_GREY
+          font-size 8px
+          text-transform uppercase
+          font-weight bold
+
+    li.completed
+      >.title, >.note
+        text-decoration line-through
+        color #C8C8C8
+
+    li.collapsed
+      > .children
+        display none
+
+    li.open
+      > .children
+        display block
+
     li
-      font-size 15px
-      padding 7px 0
-      .circle
-        background rgba(GREY, .9)
-        border-radius(50%)
+      font-size 14px
+      padding 7px 0 1px 0
+      position relative
+      .drag
+        display none
+      .toggle, .collapse, .show
+        visibility hidden
+        cursor pointer
+        margin-right 5px
+        font-size 17px
+        line-height 0
+        vertical-align middle
+        display inline-block
         width 8px
-        height 8px
+      
+      .show
+        margin-top 4px
+
+      .edit-input, .edit-input:hover, .edit-input:focus
+        display none
+        border none
+        box-shadow(none)
+        width 90%
+        color GREY
+        font-size  14px
+        padding 0
+        margin 0
+
+      .note a, >.title a
+        color #EB9710
+
+      .note
+        margin-left 30px
+        font-size 12px
+        color lighten(GREY, 20)
+
+      .edit-note, .edit-note:hover, .edit-note:focus
+        display none
+        height 15px
+        border none
+        box-shadow(none)
+        width 90%
+        color lighten(GREY, 20)
+        padding 0
+        margin 0
+        margin-left 30px
+        font-size 12px
+
+      >.title
+        display inline-block
+        img
+          max-width 200px
+          max-height 200px
+
+      .circle
+        //background rgba(GREY, .7)
+        //border-radius(50%)
+        //width 7px
+        //height 7px
         display inline-block
         margin-right 10px
+        cursor pointer
 
-    .node .circle
-      background rgba(GREY, .6)
-      width 7px
-      height 7px
+      .circle:hover:before
+        color rgba(GREY, .8)
+  
+      .circle:before
+        font-family: Entypo; /* BYO icon font, mapped smartly */
+        font-size 20px
+        content "\25CF"
+        color rgba(GREY, .6)
+
+    .shared
+      >.circle:before
+        content "\01F4BF"
+        font-size 17px
+        color rgba(GREY, .9)
+   
+
+// Display lists as a tree
+.tree-view
+  width 800px
+  margin 20px auto
+  li.node
+    >.title
+      min-width 90%
+      min-height 18px
+    img
+      max-width 400px
+  #playground
+    .drop-placeholder
+      margin 0 0 0 30px
+      width 100%
+
+// Display lists as a board
+.board-view
+  background #F7F7F7
+  box-shadow(inset 0 0 3px rgba(black, .2))
+  #playground
+    overflow-x scroll
+    ul.root
+      height 900px
+      width 4000px
+      >li 
+        display inline-block
+        float left
+        overflow-y auto
+        height 900px
+        margin-right 10px
+        width 300px
+        padding 16px 10px
+        background white
+        box-shadow(0 1px 4px rgba(black, .1))
+
+    li.node
+      .edit-input, .edit-input:hover, .edit-input:focus, .note, .title
+        width 80%
+        overflow hidden
+        img
+          max-width 290px
+
+
+    .drop-placeholder
+      margin 0 0 0 30px
+      width 200px
+
+
+
+
+
+ul.form
+  li
+    padding 10px
+    input
+      width 400px
+      padding 10px
+    label
+      text-transform uppercase
+      font-weight 400
+      display block
+      padding-bottom 8px
+
+
+#landing-page
+  background white
+  font-family 'Source Sans Pro', "Lucida Grande", Helvetica, Arial, sans-serif
+  font-weight 300
+  #signup-form, #login-form
+    width 423px
+    margin 100px auto
+    h2
+      padding-left 7px
+
+
+
+
+// Landing page
+.landing-header
+  padding 20px
+  >div, #action-buttons li
+    border none
+
+#landing-intro
+  padding 130px
+  background rgba(black, 1)
+  padding-bottom 140px
+  color white
+  text-align center
+  h1
+    font-size 56px
+    padding-bottom 13px
+    text-transform uppercase
+  p
+    font-size 17px
+
+ul.menu
+  border none
+  box-shadow(0 0 2px rgba(black, .1))
+  font-size 12px
+  li
+    background-color rgba(white, .8)      
+    padding 8px 20px
+    border-bottom 1px solid LIGHT_GREY
+    a
+      padding 0
+      background none
+      font-weight bold
+      border none
+      color GREY
+  li:hover
+    background-color rgba(white, 1)      
+  a:hover
+    background none
+
+.modal
+  z-index 10
+  background white
+  position absolute
+  .title
+    font-size 13px
+    border-bottom 1px solid LIGHT_GREY
+    font-weight bold
+    padding 8px 10px
+  .close
+    position absolute
+    top 9px
+    right 10px
+    font-size 11px
+    cursor pointer
+
+.share-modal
+  table
+    margin-top 5px
+    text-align center
+    .remove
+      font-size 11px
+      cursor pointer
+    th
+      padding 7px 10px
+      text-transform uppercase
+      font-weight bold
+      font-size 11px
+      background LIGHT_GREY
+     td
+       padding 7px 10px
+     tr
+      border-bottom 1px solid LIGHT_GREY
+
+  #sharing-types
+    >li:last-child
+      border none
+    >li
+      padding 10px 15px
+      border-bottom 1px solid LIGHT_GREY
+      font-size 13px
+      .input-wrapper
+        display none
+      h5
+        font-weight bold
+        padding-bottom 3px
+      .button, .buttons li
+        background LIGHT_GREY
+        color GREY
+        cursor pointer
+        display inline-block
+        padding 6px 11px 5px 11px
+        border-right 1px solid rgba(white, .2)
+        transition(background .3s ease-out)
+        position relative
+        font-size 8px
+        text-transform uppercase
+        font-weight bold
+
+       .button:hover, .buttons li:hover, .buttons li.active
+          background MAIN_COLOR
+          color white
+
+      ul.buttons
+        margin-top 6px
+        display inline-block
+      input[type=text]
+        width 100%
+        margin-bottom 4px
+      label
+        display block
+    .collaborators
+      >li >*
+        margin-right 10px
+
+#overlay
+  z-index 0
+  display none
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background rgba(black, .8)
+
+.drag-helper
+  background url('/images/drag.png')
+  height 16px
+  width 16px
+  cursor move
+  display none
+
+.errors
+  position absolute
+  top 10px
+  right 10px
+
+.error
+  margin-bottom 10px
+  position relative
+  background white
+  border-bottom 4px solid rgba(red, .9)
+  padding 20px
+  box-shadow(0 0 3px rgba(black, .3))
+  color GREY
+  min-width 200px
+  font-size 13px
+  .close
+    position absolute
+    top 5px
+    right 5px
+    font-size 10px
+    cursor pointer
+
+
+.tooltip
+  //display none
+  position absolute
+  color LIGHT_GREY
+  box-shadow(0px 1px 3px rgba(black, .3))
+
+  .tooltip-title
+    padding 8px 15px
+    font-size 11px
+    font-weight bold
+    text-transform uppercase
+    border-bottom 1px solid rgba(white, .2)
+
+
+.action-tooltip
+  padding-right 15px
+  ul.buttons
+    padding 0
+    margin 0
+    background rgba(black, .9)
+    li:hover
+      background white
+      color GREY
+
+    li
+      cursor pointer
+      border-bottom 1px solid rgba(white, .2)
+      transition(background .3s ease-out)
+      position relative
+      color LIGHT_GREY
+      padding 0px 4px
+      font-size 24px
+    .delete
+      padding-left 6px
 
