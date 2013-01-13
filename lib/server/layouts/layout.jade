@@ -1,0 +1,22 @@
+doctype 5
+html(lang="en")
+  head
+    block title
+      title Listinception
+    block styles
+      link(href='http://fonts.googleapis.com/css?family=PT+Sans:700', rel='stylesheet', type='text/css')
+      link(rel="stylesheet", href="/app.css")
+      link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    block body
+      #content
+        block content
+      block scripts
+        script(src="/app.js")
+        script
+          var app       = require('app');
+          $ = require('component-jquery');
+          $(function() {
+            app.start();
+          })
+
