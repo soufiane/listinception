@@ -1,50 +1,20 @@
-!!!5
-html(lang="en")
-  head
-    title Editor
-    link(href='http://fonts.googleapis.com/css?family=PT+Sans:700', rel='stylesheet', type='text/css')
-    link(rel="stylesheet", href="/stylesheets/style.css")
-  body
-    header.clearfix
-      #logo
-        // replace this with a logo desined in photoshop
-        h1: a(href="/") Listinception
+extends ../../layouts/layout
 
-      #search
-        input(type="text", placeholder="Search ...")
+block title
+  title Editor
 
-      #current-user-links
-        ul
-          li
-            a(href="/soufell") 
-              img(src="https://secure.gravatar.com/avatar/607ec61ea0baecb8a9e25e81447dc0e3?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png")
-    #editor
-      ul.breadcrumb
+block content
+  #editor-page
+    include ../../includes/header
+    #editor.clearfix.tree-view(data-view="tree-view")
+      //ul.breadcrumb
         li: a(href="#") Listinception prototype
         li.arrow >
         li: a(href="#") Features
         li.arrow >
         li: a(href="#") Users
       #playground
+        input#new-list(type="text", placeholder="Create a list.")
         ul.root
-          li 
-            span.circle
-            span List Prototype
-            ul.node
-              li 
-                span.circle
-                span Users
-                ul.node
-                  li 
-                    span.circle
-                    span Login
-                   li 
-                    span.circle
-                    span Login
-                   li 
-                    span.circle
-                    span Login
- 
-          li
-            span.circle
-            span Listinception product
+
+
