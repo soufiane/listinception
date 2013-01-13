@@ -1,0 +1,20 @@
+extends ../../layouts/layout
+
+block title
+  title Editor
+
+block content
+  #editor-page
+    include ../../includes/header
+    #editor
+      //ul.breadcrumb
+        li: a(href="#") Listinception prototype
+        li.arrow >
+        li: a(href="#") Features
+        li.arrow >
+        li: a(href="#") Users
+      #playground
+        input#new-list(type="text", placeholder="Create a list.")
+        ul.root
+
+
