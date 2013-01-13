@@ -1,0 +1,20 @@
+{
+  "name": "landing",
+  "description": "Langing page",
+  "dependencies": {
+    "component/jquery": "*"
+  },
+  "local": ["backbone", "router"],
+  "development": {},
+  "scripts": [
+    "index.js",
+    "routes.js",
+    "buttons-view.js",
+    "signup-view.js",
+    "login-view.js",
+    "template.js"
+  ],
+  "styles": [
+    "landing.css"
+  ]
+}
