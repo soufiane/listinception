@@ -6,7 +6,7 @@
     "component/underscore": "*"
   },
   "development": {},
-  "local": ["backbone", "list"],
+  "local": ["backbone"],
   "scripts": [
     "index.js"
   ]
