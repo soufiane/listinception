@@ -1,0 +1,47 @@
+.modal.share-modal
+  h5.title Share
+  span.close x
+  ul#sharing-types
+    //li.share-link
+      h5 Via a secret link.
+      p Anyone you give the link to can access the list. No login required.
+
+      strong pemissions: 
+      ul.buttons.permissions
+        li.active(data-name='view') view
+        li(data-name="edit") edit
+
+      .input-wrapper
+        label(for="share link") Link:
+        input.share-link(name="share link", type="text", value="meow my ass")
+      br
+      span.button.share-guest share
+    li.share-user
+
+      h5 Share with a listinception user
+      p Only people you specify can access this list.
+      
+      label(for="email") Username:
+      input.username(name="username", type="text")
+      p.hint type guest to share with anonymouse users
+
+      strong pemissions: 
+      ul.buttons.permissions
+        li.active(data-name="view") view
+        li(data-name="edit") edit
+      br
+      span.button.share share
+
+    li.shared-with
+      strong Shared with:
+      table.collaborators
+        tr
+          th username
+          th permissions
+          th delete
+
+    li.public-url
+      strong Public url:
+      input(type="text", value="http://listinception.com/shared/" + _id)
+      p.hint send this link to the people you want to share this list with
+

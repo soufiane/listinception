@@ -1,0 +1,8 @@
+tr(data-id=_id)
+  td #{username}
+  td
+    ul.buttons
+      - each p in permissions
+        li.active #{p}
+  td
+    span.remove x

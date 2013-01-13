@@ -1,0 +1,21 @@
+{
+  "name": "list-view",
+  "description": "List-view in the editor",
+  "dependencies": {
+    "component/underscore": "*",
+    "component/jquery": "*",
+    "component/moment": "*"
+  },
+  "development": {},
+  "local": ["backbone", "jade-runtime", "list", "markdown-css", "jquery-ui", "emitter", "router", "progress"],
+  "scripts": [
+    "index.js",
+    "templates/list.js",
+    "templates/share.js",
+    "templates/collaborator.js",
+    "templates/action-tooltip.js",
+    "views/list.js",
+    "views/share.js",
+    "views/action-tooltip.js"
+  ]
+}

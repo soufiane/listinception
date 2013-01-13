@@ -1,0 +1,51 @@
+- if (state === 'open')
+  span(class="toggle collapse") -
+- else
+  span(class="toggle show") +
+
+
+span.circle
+
+// title
+span.title.md !{md.title}
+
+// edit title
+
+input.edit-input(type="text", value=title)
+
+// note
+.note.md !{md.note} 
+
+// edit note
+textarea.edit-note #{note}
+
+- if (state === 'open')
+  ul.children
+- else
+  ul.children(style="display:none")
+
+
+//.tooltip.action-tooltip
+  ul.buttons
+    li.add-note add note
+    - if (status === 'new')
+      li.complete complete
+    - else
+      li.mark-new mark new
+    li.share share
+    li.delete delete
+
+
+//.tooltip.editing-tooltip
+  ul.buttons
+    li
+      strong b
+    li
+      u u
+    li
+      i i
+    li url
+    li img
+    li ?
+
+span.drag(data-icon="&#59215;")

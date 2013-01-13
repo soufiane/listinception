@@ -1,0 +1,10 @@
+ul.buttons
+  li.add-note(data-icon="&#59160;", title="Add a note")
+  - if (status === 'new')
+    li.complete(data-icon="&#127919;", title="Complete")
+    li.mark-new(data-icon="&#128281;", title="Mark new", style="display: none")
+  - else
+    li.complete(data-icon="&#127919;", title="Complete", style="display: none")
+    li.mark-new(data-icon="&#128281;", title="Mark new")
+  li.share(data-icon="&#59196;", title="Share")
+  li.delete(data-icon="&#10060;", title="delete")
