@@ -5,7 +5,7 @@
     "component/jquery": "*",
     "component/underscore": "*"
   },
-  "local": ["backbone"],
+  "local": ["backbone", "lists", "markdown", "highlight"],
   "development": {},
   "scripts": [
     "index.js"
