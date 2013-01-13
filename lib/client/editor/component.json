@@ -1,0 +1,21 @@
+{
+  "name": "editor",
+  "description": "Editor",
+  "dependencies": {
+    "component/dropdown": "*",
+    "component/jquery": "*"
+  },
+  "local": ["backbone", "emitter", "router", "list", "lists", "list-view"],
+  "development": {},
+  "scripts": [
+    "editor-view.js",
+    "view-changer.js",
+    "user-dropdown.js",
+    "lists.js",
+    "routes.js",
+    "index.js"
+  ],
+  "styles": [
+    "editor.css"
+  ]
+}
