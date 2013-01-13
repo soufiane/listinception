@@ -1,0 +1,9 @@
+{
+  "name": "markdown",
+  "description": "markdown parser",
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
