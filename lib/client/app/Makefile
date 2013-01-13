@@ -1,10 +1,14 @@
-
+COMPONENT=../../../node_modules/component/bin/component
 #build: components index.js
-build: components
-	@component build -o ../../../public/ -n app --dev
+build: components templates
+	@$(COMPONENT) build -o ../../../public/ -n app --dev
 
 components: component.json
-	@component install --dev
+	@$(COMPONENT) install --dev
+
+templates:
+	@make -C ../list-view/ template
+	@make -C ../error/ template
 
 clean:
 	rm -fr build components template.js
