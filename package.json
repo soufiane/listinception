@@ -6,7 +6,8 @@
     "start": "node lib/app-server/app"
   },
   "engines": {
-    "node": "0.8.14"
+    "node": "0.8.14",
+    "npm": "1.1.69"
   },
   "dependencies": {
     "express": "3.0.4",
