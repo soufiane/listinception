@@ -13,6 +13,9 @@
     "validator": "*",
     "bcrypt": "0.7.3",
     "nib": "*",
-    "connect-redis": "*"
+    "connect-redis": "*",
+    "marked": "*",
+    "superagent": "*",
+    "underscore": "*"
   }
 }
