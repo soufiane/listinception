@@ -1,0 +1,31 @@
+header.clearfix
+  #logo.shadow
+    // replace this with a logo desined in photoshop
+    h1: a(href="/") Listinception
+
+  - if (typeof user !== "undefined")
+    #search.shadow
+      input(type="text", placeholder="Search ...")
+
+
+    #view-changer
+      ul
+        li#change-tree.shadow(data-view="tree-view")
+          span(data-icon="&#9776;")
+
+
+        li#change-horizontal.shadow(data-view="board-view")
+          span(data-icon="&#9871;")
+
+        li#change-list.shadow(data-view="list")
+          span(data-icon="&#57349;")
+
+
+    #current-user-links
+      ul
+        li#user-avatar
+          a(href="#") 
+            img(src="http://www.gravatar.com/avatar/#{md5(user.email)}?d=mm")
+
+
+
