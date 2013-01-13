@@ -1,0 +1,107 @@
+.md h1,
+.md h2,
+.md h3,
+.md h4 {
+  color: #111;
+  font-weight: 400;
+}
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md p {
+  margin-bottom: 3px;
+  padding: 0;
+}
+.md h1 {
+  font-size: 48px;
+}
+.md h2 {
+  font-size: 36px;
+  margin: 24px 0 6px;
+}
+.md h3 {
+  font-size: 24px;
+}
+.md h4 {
+  font-size: 21px;
+}
+.md h5 {
+  font-size: 18px;
+}
+.md a {
+  color: #09f;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.md ul,
+.md ol {
+  padding: 0;
+  margin: 0;
+}
+.md li {
+  line-height: 24px;
+}
+.md li ul,
+.md li ul {
+  margin-left: 24px;
+}
+.md p,
+.md ul,
+.md ol {
+  font-size: 14px;
+  max-width: 540px;
+}
+.md pre {
+  padding: 0px 24px;
+  max-width: 800px;
+  white-space: pre-wrap;
+}
+.md code {
+  font-family: Consolas, Monaco, Andale Mono, monospace;
+  line-height: 1.5;
+  font-size: 13px;
+  border: 1px solid #e3e3e3;
+  padding: 3px 5px 1px 5px;
+}
+.md aside {
+  display: block;
+  float: right;
+  width: 390px;
+}
+.md blockquote {
+  margin: 1em 2em;
+  max-width: 476px;
+  border-left: 3px solid #ccc;
+  padding-left: 10px;
+}
+.md blockquote p {
+  color: #666;
+  max-width: 460px;
+}
+.md hr {
+  width: 540px;
+  text-align: left;
+  margin: 0 auto 0 0;
+  color: #999;
+}
+.md table {
+  border-collapse: collapse;
+  margin: 1em 1em;
+  border: 1px solid #ccc;
+}
+.md table thead {
+  background-color: #eee;
+}
+.md table thead td {
+  color: #666;
+}
+.md table td {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+}
+.md em {
+  font-weight: bold;
+}

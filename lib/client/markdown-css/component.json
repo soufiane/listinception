@@ -1,0 +1,9 @@
+{
+  "name": "markdown-css",
+  "description": "simple styling for markdown",
+  "dependencies": {},
+  "development": {},
+  "styles": [
+    "markdown.css"
+  ]
+}
