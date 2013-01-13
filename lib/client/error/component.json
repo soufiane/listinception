@@ -1,0 +1,17 @@
+{
+  "name": "error",
+  "description": "handle all errors and display appropriate messages",
+  "dependencies": {
+    "component/underscore": "*",
+    "component/jquery": "*"
+  },
+  "development": {},
+  "local": ["backbone", "emitter", "jade-runtime"],
+  "scripts": [
+    "index.js",
+    "templates/error.js"
+  ],
+  "styles": [
+    "error.css"
+  ]
+}
