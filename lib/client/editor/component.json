@@ -8,6 +8,7 @@
   "local": ["backbone", "emitter", "router", "list", "lists", "list-view"],
   "development": {},
   "scripts": [
+    "search.js",
     "editor-view.js",
     "view-changer.js",
     "user-dropdown.js",
