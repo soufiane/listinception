@@ -14,7 +14,7 @@ A simple tool to make lists
 
 #### List editor
 
-![Homepage](http://imgur.com/a/YuK8L)
+![Homepage](http://i.imgur.com/5FQh4rkh.png)
 
 Click [here](http://imgur.com/a/YuK8L) to see more screenshots.
 
